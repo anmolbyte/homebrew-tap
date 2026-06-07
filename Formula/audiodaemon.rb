@@ -1,13 +1,12 @@
 class Audiodaemon < Formula
   desc "Ultra-lightweight macOS background daemon for automatic audio routing"
   homepage "https://github.com/anmolbyte/autoaudio"
-  # Placeholder URL for public release tarball. Update this when publishing.
   url "https://github.com/anmolbyte/autoaudio/archive/refs/tags/v1.0.0.tar.gz"
-  sha256 "0000000000000000000000000000000000000000000000000000000000000000"
+  sha256 "e8194926afeee22cb6ffdb9c928400ff2a5c12b52985094f719b9184dc14ce03"
   license "MIT"
 
-  # Allows testing via local tap by specifying `--HEAD` if autoaudio is initialized as a git repo.
-  head "file:///Users/anmol/Documents/autoaudio", using: :git
+  # Allows installing the latest commit directly from your GitHub repository
+  head "https://github.com/anmolbyte/autoaudio.git", branch: "main"
 
   def install
     system "make", "install", "PREFIX=#{prefix}"
